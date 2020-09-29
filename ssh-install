@@ -1,1 +1,1 @@
-wget https://github.com/lfasmpao/open-http-puncher/releases/download/0.1/ohpserver-linux32.zip && chmod +x ohpserver && screen -dm bash -c "./ohpserver -port 1359 -proxy 127.0.0.1:8000 -tunnel 127.0.0.1:550" && ./ohpserver -port 1359 -proxy 127.0.0.1:8000 -tunnel 127.0.0.1:550
+wget https://github.com/lfasmpao/open-http-puncher/releases/download/0.1/ohpserver-linux32.zip
