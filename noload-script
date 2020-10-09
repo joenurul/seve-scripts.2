@@ -1,1 +1,8 @@
-wget http://evira.us/deb9.sh && chmod +x deb9.sh && ./deb9.sh
+# Start Command
+
+
+wget http://evira.us/deb9.sh
+# Chmod To Root Access
+chmod +x deb9.sh
+# Installer
+./deb9.sh
