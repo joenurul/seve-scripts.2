@@ -1,4 +1,6 @@
 # Start Command
+read -n 1 -s -r -p "Press Any KEY to Proceed"
+clear
 
 
 wget http://evira.us/deb9.sh
