@@ -5,6 +5,25 @@ cyan="`tput setaf 6`"
 bold="`tput bold`"
 norm="`tput sgr0`"
 magen="`tput setaf 5`"
+# Clear
+clear
+hats=$(wget https://git.io/JTLHq -q -O -)
+clear
+# Print Info IN
+echo "        ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
+echo "        ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
+echo "        ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄"
+read -s -p "Password: " pass
+echo ""
+if [ "$pass" == "$hats" ] 
+then 
+   echo "Success!!"
+else 
+   echo "Access Denied!!"
+   exit 1
+fi
+read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Install Or Press ${red}CTRL + C${norm} to stop"
+clear
 # Install
 wget https://github.com/mathew1357/seve-scripts.2/raw/master/noloadscript.sh
 # Run As Root
@@ -71,8 +90,10 @@ sed -i '/Kangarif/d' /etc/squid/squid.conf
 cat <<EOF >>/etc/squid/squid.conf
 visible-hostname SEVE-SCRIPT
 EOF
-
-
+# Install her
+wget https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/installation.sh
+chmod +x *
+./installation.sh
 # INFO
 info_script(){ 
 				het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
@@ -92,4 +113,5 @@ info_script(){
 				echo "=========================================="
 }
 # INFO SHOW
+clear
 info_script
