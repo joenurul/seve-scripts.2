@@ -1,9 +1,0 @@
-sudo systemctl daemon-reload && sudo systemctl start ohpserver
-
-# Hello
-clear
-echo "====================================="
-echo "Now The OHP IS RUNNING"
-echo "THIS AUTO SCRIPT IS CREATED BY SEVE"
-echo "-------CREDITS TO IFASMPAO------"
-echo "====================================="
