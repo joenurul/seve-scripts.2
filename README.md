@@ -2,6 +2,4 @@
 Created by Seve Malachi ....
 HEY HELLO
 
-Only Works on BONVEIO SCRIPTS
-
-CREDITS TO lfasmpao😊
+Only Works on My VPS SCRIPT
