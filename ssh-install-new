@@ -1,1 +1,10 @@
-wget https://github.com/lfasmpao/open-http-puncher/releases/download/0.1/ohpserver-linux32.zip && unzip ohpserver-linux32.zip && chmod 755 ohpserver && sudo mv ohpserver /usr/local/bin/ && sudo nano /etc/systemd/system/ohpserver.service
+# Install
+wget -q https://github.com/lfasmpao/open-http-puncher/releases/download/0.1/ohpserver-linux32.zip
+# Unzip
+unzip ohpserver-linux32.zip
+# Run As Root
+chmod 755 ohpserver
+# Sudoing Ohpserver
+sudo mv ohpserver /usr/local/bin/
+# Nanoing The Ohp Service
+sudo nano /etc/systemd/system/ohpserver.service
