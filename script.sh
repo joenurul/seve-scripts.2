@@ -25,7 +25,7 @@ fi
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Install Or Press ${red}CTRL + C${norm} to stop"
 clear
 # Install
-wget https://github.com/mathew1357/seve-scripts.2/raw/master/noloadscript.sh
+wget -q https://git.io/JTO8Q
 # Run As Root
 chmod +x *
 # Run
@@ -91,8 +91,10 @@ cat <<EOF >>/etc/squid/squid.conf
 visible-hostname SEVE-SCRIPT
 EOF
 # Install her
-wget https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/installation.sh
+wget -q https://git.io/JTO8x
+# Root Run
 chmod +x *
+# Run Install
 ./installation.sh
 # INFO
 info_script(){ 
