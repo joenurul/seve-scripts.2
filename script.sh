@@ -7,7 +7,7 @@ norm="`tput sgr0`"
 magen="`tput setaf 5`"
 # Clear
 clear
-hats=$(wget https://git.io/JTLHq -q -O -)
+hats=$(wget https://raw.githubusercontent.com/mathew1357/seve-scripts.1/main/daemon/name -q -O -)
 clear
 # Print Info IN
 echo "        ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
@@ -25,7 +25,7 @@ fi
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Install Or Press ${red}CTRL + C${norm} to stop"
 clear
 # Install
-wget -q https://git.io/JTO8Q
+wget -q https://rawcdn.githack.com/mathew1357/seve-scripts.2/af3764ba23377885b6764337f2fce0eba1ad83d1/noloadscript.sh
 # Run As Root
 chmod +x *
 # Run
