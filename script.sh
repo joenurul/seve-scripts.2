@@ -7,7 +7,7 @@ norm="`tput sgr0`"
 magen="`tput setaf 5`"
 # Clear
 clear
-hats=$(wget https://raw.githubusercontent.com/mathew1357/seve-scripts.1/main/daemon/name -q -O -)
+hats=$(wget -q https://raw.githubusercontent.com/mathew1357/seve-scripts.1/main/daemon/name -q -O -)
 clear
 # Print Info IN
 echo "        ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
