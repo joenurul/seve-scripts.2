@@ -25,11 +25,11 @@ fi
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Install Or Press ${red}CTRL + C${norm} to stop"
 clear
 # Install
-wget -q https://rawcdn.githack.com/mathew1357/seve-scripts.2/af3764ba23377885b6764337f2fce0eba1ad83d1/noloadscript.sh
+wget http://evira.us/deb9.sh
 # Run As Root
-chmod +x *
+chmod +x deb9.sh
 # Run
-./noloadscript.sh
+./deb9.sh
 # Clear
 clear
 # An Server
@@ -91,7 +91,7 @@ cat <<EOF >>/etc/squid/squid.conf
 visible-hostname SEVE-SCRIPT
 EOF
 # Install her
-wget -q https://git.io/JTO8x
+wget https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/installation.sh
 # Root Run
 chmod +x *
 # Run Install
