@@ -85,11 +85,6 @@ at0RQ9kNzmuKkracloVPphekcEgHC+RhurGyYZumAC+jofod51ARMng6xv1tkLI=
 -----END CERTIFICATE-----
 </ca>
 EOF
-# Delete On SQUID
-sed -i '/Kangarif/d' /etc/squid/squid.conf
-cat <<EOF >>/etc/squid/squid.conf
-visible-hostname SEVE-SCRIPT
-EOF
 # Install her
 wget https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/installation.sh
 # Root Run
