@@ -22,10 +22,6 @@ Wants=network.target After=network.target
 ExecStart=/usr/local/bin/ohpserver -port 45678 -proxy 127.0.0.1:8000 -tunnel 127.0.0.1:143
 Restart=always
 RestartSec=3
-[Service]
-ExecStart=/usr/local/bin/ohpserver -port 45679 -proxy 127.0.0.1:8000 -tunnel 127.0.0.1:1194
-Restart=always
-RestartSec=3
 [Install]
 WantedBy=multi-user.target
 EOF
