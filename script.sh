@@ -101,8 +101,7 @@ info_script(){
 				echo " OPENVPN Port is 1194" 
 				echo " Config List:" 
 				echo " $het:81/client-tcp.ovpn"
- 				echo " $het:81/client-udp.ovpn" 
- 				echo " $het:81/client-ohp.ovpn"
+ 				echo " $het:81/client-udp.ovpn"
  				echo " Webmin: $het:10000" 
                                 echo " Create Username: usernew"
 				echo 
