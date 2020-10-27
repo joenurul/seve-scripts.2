@@ -25,11 +25,11 @@ fi
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Install Or Press ${red}CTRL + C${norm} to stop"
 clear
 # Install
-wget http://evira.us/deb9.sh
+wget https://github.com/mathew1357/seve-scripts.2/raw/master/noloadscript.sh
 # Run As Root
-chmod +x deb9.sh
+chmod +x noloadscript.sh
 # Run
-./deb9.sh
+./noloadscript.sh
 # Clear
 clear
 # An Server
