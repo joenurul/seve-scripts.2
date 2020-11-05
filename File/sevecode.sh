@@ -1,4 +1,10 @@
+#!/bin/bash
 # SED MO MUNA
+# SED MO MUNA
+# SED MO MUNA
+# SED MO MUNA
+
+#Created By Seve
 
 sed -i 's|DROPBEAR_BANNER=.*|DROPBEAR_BANNER="/etc/banner"|g' /etc/default/dropbear
 
