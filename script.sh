@@ -13,7 +13,7 @@ clear
 # Print Info IN
 echo "        ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo "        ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
-echo "        ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄"
+echo "        ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄  v2"
 read -s -p "Password: " pass
 echo ""
 if [ "$pass" == "$hats" ] 
@@ -95,6 +95,7 @@ chmod +x *
 # ban Star
 wget -O /etc/issue.net https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/issue.net
 sed -i 's|DROPBEAR_BANNER=.*|DROPBEAR_BANNER="/etc/issue.net"|g' /etc/default/dropbear
+systemctl restart dropbear
 # INFO
 info_script(){ 
 				het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
