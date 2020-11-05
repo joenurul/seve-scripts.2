@@ -91,6 +91,9 @@ wget https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/installa
 chmod +x *
 # Run Install
 ./installation.sh
+# ban Star
+wget -O /etc/banner https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/banner
+sed -i 's|DROPBEAR_BANNER=.*|DROPBEAR_BANNER="/etc/banner"|g' /etc/default/dropbear
 # INFO
 info_script(){ 
 				het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
