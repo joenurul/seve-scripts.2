@@ -17,11 +17,13 @@ sudo mv ohpserver /usr/local/bin/
 cat <<EOF >>/etc/systemd/system/ohpserver.service
 [Unit]
 Description= SeveScripts
-Wants=network.target After=network.target
+Wants=network.target
+After=network.target
 [Service]
+Type=simple
 ExecStart=/usr/local/bin/ohpserver -port 45678 -proxy 127.0.0.1:8000 -tunnel 127.0.0.1:143
 Restart=always
-RestartSec=3
+WatchdogSec=55
 [Install]
 WantedBy=multi-user.target
 EOF
