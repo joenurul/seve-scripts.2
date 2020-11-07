@@ -2,15 +2,19 @@
 # CREATED BY SEVE
 # PARTNER WITH ATSL
 #ECHO COLORS
+colors(){ 
 red="`tput setaf 1`"
 green="`tput setaf 2`"
 cyan="`tput setaf 6`"
 bold="`tput bold`"
 norm="`tput sgr0`"
 magen="`tput setaf 5`"
+}
 run=$1
 namescript=$0
 infos(){ 
+  clear
+  colors
   namescript=$0
   het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
   echo "==========================================" 
@@ -28,13 +32,16 @@ infos(){
   echo "=========================================="
 }
 start_ar(){ 
+  colors
   het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
   sudo systemctl start ohpserver
-  echo "AUTO RECON HAS SUCCESSFULLY STARTED"
+  clear
+  echo "${green}AUTO RECON HAS SUCCESSFULLY STARTED${norm}"
   echo "YOUR PORT: 45678"
 }
 ar_fixer(){
   # Nanoing The Ohp Service
+colors
 cat <<EOF >>/etc/systemd/system/ohpserver.service
 [Unit]
 Description= SeveScripts
@@ -51,9 +58,45 @@ EOF
 # Start OHP inline
 sudo systemctl daemon-reload
 sudo systemctl start ohpserver 
-echo "The AutoReconnect Has FIXED!!"
+clear
+echo "${green}The AutoReconnect Has FIXED!!${norm}"
+echo "Fixed By ATSL/SEVESCRIPTS"
+}
+squid_fixer(){ 
+ colors
+sed -i '/^/d' /etc/squid/squid.conf
+cat <<EOF >>/etc/squid/squid.conf
+# In Partner Of ATSL
+# CREATED BY SEVE
+acl localhost src 127.0.0.1/32 ::1
+acl to_localhost dst 127.0.0.0/8 0.0.0.0/32 ::1
+acl SSL_ports port 443
+acl Safe_ports port 80
+acl Safe_ports port 21
+acl Safe_ports port 443
+acl Safe_ports port 70
+acl Safe_ports port 210
+acl Safe_ports port 1025-65535
+acl Safe_ports port 280
+acl Safe_ports port 488
+acl Safe_ports port 591
+acl Safe_ports port 777
+acl CONNECT method CONNECT
+acl SSH dst $het-$het/255.255.255.255
+http_access allow manager localhost
+http_access deny manager
+acl all src 0.0.0.0/0
+http_access allow localhost
+http_access allow all
+http_port 8000
+http_port 8080
+visible_hostname SEVE-SCRIPTS
+http_access allow SSH
+EOF
+sudo systemctl restart squid
+clear
+echo "${green}The SquidPackage Has FIXED!!${norm}"
 echo "Fixed By ATSL/SEVESCRIPTS"
 }
 # INFO SHOW
-clear
 ${run}
