@@ -1,6 +1,13 @@
 #!/bin/bash
 # CREATED BY SEVE
 # PARTNER WITH ATSL
+#ECHO COLORS
+red="`tput setaf 1`"
+green="`tput setaf 2`"
+cyan="`tput setaf 6`"
+bold="`tput bold`"
+norm="`tput sgr0`"
+magen="`tput setaf 5`"
 run=$1
 namescript=$0
 infos(){ 
