@@ -2,17 +2,6 @@
 # CREATED BY SEVE
 # PARTNER WITH ATSL
 #ECHO COLORS
-action=$1
-[ -z $1 ] && action=infos
-case "$action" in 
-colors|infos|start_ar|ar_fixer|squid_fixer) 
-${action}
-;; 
-*) 
-echo "Arguments error! [${action}]" 
-echo "Usage: $0 [colors|infos|start_ar|ar_fixer|squid_fixer]" 
-;;
-esac
 colors(){ 
 red="`tput setaf 1`"
 green="`tput setaf 2`"
@@ -109,4 +98,14 @@ echo "${green}The SquidPackage Has FIXED!!${norm}"
 echo "Fixed By ATSL/SEVESCRIPTS"
 }
 # INFO SHOW
-
+action=$1
+[ -z $1 ] && action=infos
+case "$action" in 
+infos|start_ar|ar_fixer|squid_fixer) 
+${action}
+;; 
+*) 
+echo "Arguments error! [${action}]" 
+echo "Usage: $0 [infos|start_ar|ar_fixer|squid_fixer]" 
+;;
+esac
