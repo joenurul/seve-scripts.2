@@ -1,5 +1,6 @@
 # Force-200-Script BY SEVE
-Created by Seve Malachi ....
-HEY HELLO
+Created by SEVE SCRIPTS
+
+# How To Install
 
 Only Works on My VPS SCRIPT
