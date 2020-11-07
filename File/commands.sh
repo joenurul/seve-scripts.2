@@ -1,4 +1,6 @@
 #!/bin/bash
+# CREATED BY SEVE
+# PARTNER WITH ATSL
 run=$1
 namescript=$0
 infos(){ 
