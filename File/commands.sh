@@ -1,3 +1,4 @@
+#!/bin/bash
 run=$1
 namescript=$0
 infos(){ 
