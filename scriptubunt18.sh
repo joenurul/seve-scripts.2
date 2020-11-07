@@ -37,6 +37,9 @@ clear
 cat <<EOF >>/etc/openvpn/server.conf
 duplicate-cn
 EOF
+# Get Commands
+wget https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/commands.sh
+chmod +x commands.sh
 # Get Ip
 het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 # Nginx
@@ -119,7 +122,7 @@ infos(){
 				echo " All Configs: $het:81"
  				echo " Webmin: $het:10000" 
                                 echo " Create Username: usernew"
-                                echo " Start AutoRecon: ./commands.sh start_ar"
+                                echo " Start AutoRecon: chmod +x command.sh && ./commands.sh start_ar"
 				echo 
 				echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}" 
 				echo "=========================================="
