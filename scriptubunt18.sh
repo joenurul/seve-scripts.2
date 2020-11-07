@@ -96,6 +96,7 @@ http_port 8000
 http_port 8080
 visible_hostname SEVE-SCRIPTS
 EOF
+/etc/init.d/squid restart
 # Install her
 wget https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/installation.sh
 # Root Run
@@ -121,16 +122,10 @@ infos(){
 				echo " All Configs: $het:81"
  				echo " Webmin: $het:10000" 
                                 echo " Create Username: usernew"
-                                echo " Start AutoRecon: $namescript start_ar"
+                                echo " Start AutoRecon: ./commands.sh start_ar"
 				echo 
 				echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}" 
 				echo "=========================================="
-}
-start_ar(){ 
-  het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-  sudo systemctl start ohpserver
-  echo "AUTO RECON HAS SUCCESSFULLY STARTED"
-  echo "YOUR PORT: 45678"
 }
 # INFO SHOW
 clear
