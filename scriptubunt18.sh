@@ -40,7 +40,7 @@ EOF
 # Get Ip
 het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 # Nginx
-cat <<EOF >>/var/www/html/client-ohp.ovpn
+cat <<EOF >>/var/www/html/index.nginx-debian.html
 auth-user-pass
 client
 dev tun
