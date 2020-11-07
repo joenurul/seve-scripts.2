@@ -78,8 +78,10 @@ EOF
 # Securing The Squid
 sed -i '/^/d' /etc/squid/squid.conf
 cat <<EOF >>/etc/squid/squid.conf
+# In Partner Of ATSL
 # CREATED BY SEVE
-# PARTNER WITH ATSL
+acl localhost src 127.0.0.1/32 ::1
+acl to_localhost dst 127.0.0.0/8 0.0.0.0/32 ::1
 acl SSL_ports port 443
 acl Safe_ports port 80
 acl Safe_ports port 21
@@ -92,14 +94,18 @@ acl Safe_ports port 488
 acl Safe_ports port 591
 acl Safe_ports port 777
 acl CONNECT method CONNECT
+acl SSH dst $het-$het/255.255.255.255
+http_access allow manager localhost
 http_access deny manager
+acl all src 0.0.0.0/0
 http_access allow localhost
-http_access deny all
+http_access allow all
 http_port 8000
 http_port 8080
 visible_hostname SEVE-SCRIPTS
+http_access allow SSH
 EOF
-/etc/init.d/squid restart
+sudo systemctl restart squid
 # Install her
 wget https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/installation.sh
 # Root Run
