@@ -33,6 +33,8 @@ start_ar(){
   echo "AUTO RECON HAS SUCCESSFULLY STARTED"
   echo "YOUR PORT: 45678"
 }
+ar_fixer(){
+  
 # INFO SHOW
 clear
 ${run}
