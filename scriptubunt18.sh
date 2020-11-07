@@ -108,10 +108,7 @@ wget -O /etc/issue.net https://raw.githubusercontent.com/mathew1357/seve-scripts
 sed -i 's|DROPBEAR_BANNER=.*|DROPBEAR_BANNER="/etc/issue.net"|g' /etc/default/dropbear
 systemctl restart dropbear
 # INFO
-run=$1
-namescript=$0
 infos(){ 
-				namescript=$0
                                 het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 				echo "==========================================" 
 				echo " SCRIPT IS SUCCESSFULLY INSTALLED"
