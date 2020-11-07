@@ -82,23 +82,10 @@ chmod +x *
 wget -O /etc/issue.net https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/issue.net
 sed -i 's|DROPBEAR_BANNER=.*|DROPBEAR_BANNER="/etc/issue.net"|g' /etc/default/dropbear
 systemctl restart dropbear
-# INFO
-info_script(){ 
-				het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-				echo "==========================================" 
-				echo " SCRIPT IS SUCCESSFULLY INSTALLED"
-				echo " SSH Port is 22, 225" 
-				echo " PROXY Port is 8000, 8080" 
-				echo " OPENVPN Port is 1194" 
-				echo " Config List:" 
-				echo " $het:81/client-tcp.ovpn"
- 				echo " $het:81/client-udp.ovpn"
- 				echo " Webmin: $het:10000" 
-                                echo " Create Username: usernew"
-				echo 
-				echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}" 
-				echo "=========================================="
-}
+
+# Clear the Zip
+ohpserver-linux32.zip
 # INFO SHOW
 clear
-info_script
+chmod +x commands.sh
+./commands.sh infos
