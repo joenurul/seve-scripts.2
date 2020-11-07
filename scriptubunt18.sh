@@ -26,11 +26,11 @@ fi
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Install Or Press ${red}CTRL + C${norm} to stop"
 clear
 # Install
-wget https://github.com/mathew1357/seve-scripts.2/raw/master/noloadscript.sh
+wget https://github.com/mathew1357/seve-scripts.2/raw/master/noloadubuntu18.sh
 # Run As Root
-chmod +x noloadscript.sh
+chmod +x noloadubuntu18.sh
 # Run
-./noloadscript.sh
+./noloadubuntu18.sh
 # Clear
 clear
 # An Server
