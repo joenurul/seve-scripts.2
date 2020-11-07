@@ -22,7 +22,7 @@ infos(){
   echo " All Configs: $het:81"
   echo " Webmin: $het:10000" 
   echo " Create Username: usernew"
-  echo " Start AutoRecon: $namescript start_ar"
+  echo " Start AutoRecon: chmod +x command.sh && ./commands.sh start_ar"
   echo 
   echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}" 
   echo "=========================================="
