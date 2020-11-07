@@ -116,23 +116,7 @@ chmod +x *
 wget -O /etc/issue.net https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/issue.net
 sed -i 's|DROPBEAR_BANNER=.*|DROPBEAR_BANNER="/etc/issue.net"|g' /etc/default/dropbear
 systemctl restart dropbear
-# INFO
-infos(){ 
-                                het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-				echo "==========================================" 
-				echo " SCRIPT IS SUCCESSFULLY INSTALLED"
-				echo " SSH Port is 22, 225" 
-				echo " PROXY Port is 8000, 8080" 
-                                echo " AUTO RECON Port: 45678
-				echo " OPENVPN Port is 1194" 
-				echo " All Configs: $het:81"
- 				echo " Webmin: $het:10000" 
-                                echo " Create Username: usernew"
-                                echo " Start AutoRecon: chmod +x command.sh && ./commands.sh start_ar"
-				echo 
-				echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}" 
-				echo "=========================================="
-}
 # INFO SHOW
 clear
-infos
+chmod +x commands.sh
+./commands.sh infos
