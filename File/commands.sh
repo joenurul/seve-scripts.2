@@ -10,7 +10,7 @@ infos(){
   echo " SCRIPT IS SUCCESSFULLY INSTALLED"
   echo " SSH Port is 22, 225" 
   echo " PROXY Port is 8000, 8080" 
-  echo " AUTO RECON Port: 45678
+  echo " AUTO RECON Port: 45678"
   echo " OPENVPN Port is 1194" 
   echo " All Configs: $het:81"
   echo " Webmin: $het:10000" 
@@ -28,4 +28,4 @@ start_ar(){
 }
 # INFO SHOW
 clear
-run
+${run}
