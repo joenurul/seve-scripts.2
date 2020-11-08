@@ -153,11 +153,11 @@ echo
 action=$1
 [ -z $1 ] && action=infos
 case "$action" in 
-infos|start_ar|ar_fixer|squid_fixer) 
+infos|start_ar|ar_fixer|squid_fixer|changeport_ar) 
 ${action}
 ;; 
 *) 
 echo "Arguments error! [${action}]" 
-echo "Usage: $0 [infos|start_ar|ar_fixer|squid_fixer]" 
+echo "Usage: $0 [infos|start_ar|ar_fixer|squid_fixer|changeport_ar]" 
 ;;
 esac
