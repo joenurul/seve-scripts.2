@@ -1,7 +1,7 @@
 #!/bin/bash
 # CREATED BY SEVE
 # PARTNER WITH ATSL
-#ECHO COLORS
+# Colors Section
 colors(){ 
 red="`tput setaf 1`"
 green="`tput setaf 2`"
@@ -11,6 +11,7 @@ norm="`tput sgr0`"
 magen="`tput setaf 5`"
 }
 namescript=$0
+# Info Section
 infos(){ 
   clear
   colors
@@ -30,6 +31,7 @@ infos(){
   echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}" 
   echo "=========================================="
 }
+# Start Auto Recon
 start_ar(){ 
   colors
   het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
@@ -38,6 +40,7 @@ start_ar(){
   echo "${green}AUTO RECON HAS SUCCESSFULLY STARTED${norm}"
   echo "YOUR PORT: 45678"
 }
+# Auto Reconnect Fixer
 ar_fixer(){
   # Nanoing The Ohp Service
 colors
@@ -61,6 +64,7 @@ clear
 echo "${green}The AutoReconnect Has FIXED!!${norm}"
 echo "Fixed By ATSL/SEVESCRIPTS"
 }
+# Squid Proxy Fixer
 squid_fixer(){ 
  colors
 sed -i '/^/d' /etc/squid/squid.conf
@@ -96,6 +100,54 @@ sudo systemctl restart squid
 clear
 echo "${green}The SquidPackage Has FIXED!!${norm}"
 echo "Fixed By ATSL/SEVESCRIPTS"
+}
+# Port Changer AutoRecon
+changeport_ar(){ 
+colors
+clear
+echo " ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
+echo " ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
+echo " ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
+echo
+echo "${magen} CHANGE THE PORT OF AUTO RECON ${norm}"
+echo
+# Reading The Desired Port
+read -p "Your Desired Port: " pot
+# Sending The Request
+echo "${magen}Are you sure you want to Change the port?${norm}"
+read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Install Or Press ${red}CTRL + C${norm} to stop"
+clear
+echo "${green}Please Wait.${norm}"
+sleep 1
+clear
+echo "${green}Please Wait..${norm}"
+sleep 1
+clear
+echo "${green}Please Wait...${norm}"
+sleep 1
+# Sedding The Dir
+sed -i '/^/d' /etc/systemd/system/ohpserver.service
+# Catting The Dir
+cat <<EOF >>/etc/systemd/system/ohpserver.service
+[Unit]Description=SeveScripts
+Wants=network.target
+After=network.target
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/ohpserver -port $pot -proxy 127.0.0.1:8000 -tunnel 127.0.0.1:143
+Restart=always
+WatchdogSec=55
+[Install]
+WantedBy=multi-user.target
+EOF
+# Start OHP inline
+sudo systemctl daemon-reload
+sudo systemctl start ohpserver 
+clear
+echo 
+echo "${green} CHANGING SUCCESS ${norm}"
+echo "${cyan} Created By ATSL/SEVE SCRIPT${norm}"
+echo 
 }
 # INFO SHOW
 action=$1
