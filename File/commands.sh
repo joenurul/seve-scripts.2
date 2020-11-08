@@ -175,7 +175,7 @@ echo "${cyan} Created By ATSL/SEVE SCRIPT${norm}"
 echo 
 }
 # INFO SHOW
-color
+colors
 action=$1
 [ -z $1 ] && action=infos
 case "$action" in 
