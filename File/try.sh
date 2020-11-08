@@ -1,3 +1,4 @@
+#!/bin/bash
 het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 vps="vps";
 if [[ $vps = "vps" ]]; then 
