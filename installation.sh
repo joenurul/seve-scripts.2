@@ -27,10 +27,23 @@ WatchdogSec=55
 [Install]
 WantedBy=multi-user.target
 EOF
+cat <<EOF >>/etc/systemd/system/ohpserver1.service
+[Unit]
+Description=SeveScripts1
+Wants=network.target
+After=network.target
+[Service]
+ExecStart=/usr/local/bin/ohpserver -port 357 -proxy 127.0.0.1:8000 -tunnel 127.0.0.1:1194
+Restart=always
+RestartSec=3
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl start ohpserver1
 # Start OHP inline
 sudo systemctl daemon-reload
 sudo systemctl start ohpserver
-
+sudo systemctl start ohpserver1
 # Start OHP
 start(){ 
 				sudo systemctl daemon-reload 
