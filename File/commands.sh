@@ -17,7 +17,11 @@ infos(){
   colors
   namescript=$0
   het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-  echo "==========================================" 
+  echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
+echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
+echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
+echo
+echo "==========================================" 
   echo " SCRIPT IS SUCCESSFULLY INSTALLED"
   echo " SSH Port is 22, 225" 
   echo " PROXY Port is 8000, 8080" 
@@ -33,7 +37,13 @@ infos(){
 }
 # Start Auto Recon
 start_ar(){ 
-  colors
+echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
+echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
+echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
+echo
+read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTRL + C${norm} to stop"
+clear
+colors
   het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
   sudo systemctl start ohpserver
   clear
@@ -42,7 +52,12 @@ start_ar(){
 }
 # Auto Reconnect Fixer
 ar_fixer(){
-  # Nanoing The Ohp Service
+echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
+echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
+echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
+echo
+read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTRL + C${norm} to stop"
+clear
 colors
 cat <<EOF >>/etc/systemd/system/ohpserver.service
 [Unit]
@@ -66,7 +81,13 @@ echo "Fixed By ATSL/SEVESCRIPTS"
 }
 # Squid Proxy Fixer
 squid_fixer(){ 
- colors
+echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
+echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
+echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
+echo
+read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTRL + C${norm} to stop"
+clear
+colors
 sed -i '/^/d' /etc/squid/squid.conf
 cat <<EOF >>/etc/squid/squid.conf
 # In Partner Of ATSL
@@ -105,17 +126,17 @@ echo "Fixed By ATSL/SEVESCRIPTS"
 changeport_ar(){ 
 colors
 clear
-echo " ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
-echo " ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
-echo " ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
+echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
+echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
+echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
 echo
 echo "${magen} CHANGE THE PORT OF AUTO RECON ${norm}"
 echo
 # Reading The Desired Port
 read -p "Your Desired Port: " pot
 # Sending The Request
-echo "${magen}Are you sure you want to Change the port?${norm}"
-read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Install Or Press ${red}CTRL + C${norm} to stop"
+echo "${cyan}Are you sure you want to Change the port?${norm}"
+read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTRL + C${norm} to stop"
 clear
 echo "${green}Please Wait.${norm}"
 sleep 1
