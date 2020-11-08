@@ -37,6 +37,7 @@ echo "=========================================="
 }
 # Start Auto Recon
 start_ar(){ 
+clear
 echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
 echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
@@ -52,6 +53,7 @@ colors
 }
 # Auto Reconnect Fixer
 ar_fixer(){
+clear
 echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
 echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
@@ -81,6 +83,7 @@ echo "Fixed By ATSL/SEVESCRIPTS"
 }
 # Squid Proxy Fixer
 squid_fixer(){ 
+clear
 echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
 echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
@@ -171,6 +174,7 @@ echo "${cyan} Created By ATSL/SEVE SCRIPT${norm}"
 echo 
 }
 # INFO SHOW
+color
 action=$1
 [ -z $1 ] && action=infos
 case "$action" in 
@@ -178,7 +182,7 @@ infos|start_ar|ar_fixer|squid_fixer|changeport_ar)
 ${action}
 ;; 
 *) 
-echo "Arguments error! [${action}]" 
+echo "${red}Arguments error! [ ${action} ]${norm}" 
 echo "Usage: $0 [infos|start_ar|ar_fixer|squid_fixer|changeport_ar]" 
 ;;
 esac
