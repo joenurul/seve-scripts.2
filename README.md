@@ -4,4 +4,4 @@ Created by SEVE SCRIPTS
 # How To Install
 
 Ubuntu 16 / 18
-bash -c "$(wget -qO- https://git.io/SeveScripts-Ubunt.sh)"
+<pre>bash -c "$(wget -qO- https://git.io/SeveScripts-Ubunt.sh)"</pre>
