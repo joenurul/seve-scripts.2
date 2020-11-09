@@ -32,7 +32,6 @@ then
 else 
    echo
 		rm -f /root/seveip
-fi
 # HELLO +GOOGLE
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Install Or Press ${red}CTRL + C${norm} to stop"
 clear
@@ -124,4 +123,4 @@ sudo chmod +x /etc/rc.local
 rm ohpserver-linux32.zip
 # INFO SHOW
 clear
-./commands.sh
+./commands.sh infos
