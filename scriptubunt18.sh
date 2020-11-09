@@ -151,5 +151,4 @@ sudo chmod +x /etc/rc.local
 rm ohpserver-linux32.zip
 # INFO SHOW
 clear
-chmod +x commands.sh
 ./commands.sh infos
