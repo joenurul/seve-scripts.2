@@ -32,6 +32,7 @@ then
 else 
    echo
 		rm -f /root/seveip
+fi
 # HELLO +GOOGLE
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Install Or Press ${red}CTRL + C${norm} to stop"
 clear
