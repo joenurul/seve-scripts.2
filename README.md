@@ -1,5 +1,8 @@
-# VPS SCRIPT INSTALLER BY SEVE
-Created by SEVE SCRIPTS
+# VPS SCRIPT INSTALLER
+
+Created By Seve
+
+Partner with ATSL
 
 # How To Install
 
