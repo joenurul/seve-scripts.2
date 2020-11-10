@@ -111,7 +111,6 @@ acl Safe_ports port 488
 acl Safe_ports port 591
 acl Safe_ports port 777
 acl CONNECT method CONNECT
-acl SSH dst $het-$het/255.255.255.255
 http_access allow manager localhost
 http_access deny manager
 acl all src 0.0.0.0/0
@@ -120,7 +119,6 @@ http_access allow all
 http_port 8000
 http_port 8080
 visible_hostname SEVE-SCRIPTS
-http_access allow SSH
 EOF
 sudo systemctl restart squid
 clear
