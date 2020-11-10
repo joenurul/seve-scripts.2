@@ -174,16 +174,24 @@ echo "${green} CHANGING SUCCESS ${norm}"
 echo "${cyan} Created By ATSL/SEVE SCRIPT${norm}"
 echo 
 }
+showconnected(){ 
+echo "${green} ●CONNECTED USERS IP● ${norm}"
+netstat -tn 2>/dev/null | grep :80 | grep 110 | awk '{print $5}' | cut -d: -f1| awk '!x[$0]++'
+}
+showtotalconnected(){ 
+echo "${green} ●TOTAL CONNECTED USERS● ${norm}"
+echo "${green}$(netstat -tn 2>/dev/null | grep :80 | uniq -u | grep 110 | awk '{print $5}' | cut -d: -f1 | awk '!x[$0]++' | wc -l )${norm}"
+}
 # INFO SHOW
 colors
 action=$1
 [ -z $1 ] && action=infos
 case "$action" in 
-infos|start_ar|ar_fixer|squid_fixer|changeport_ar) 
+infos|start_ar|ar_fixer|squid_fixer|changeport_ar|showconnected|showtotalconnected) 
 ${action}
 ;; 
 *) 
 echo "${red}Arguments error! [ ${action} ]${norm}" 
-echo "Usage: $0 [infos|start_ar|ar_fixer|squid_fixer|changeport_ar]" 
+echo "Usage: $0 [infos|start_ar|ar_fixer|squid_fixer|changeport_ar|showconnected|showtotalconnected]" 
 ;;
 esac
