@@ -25,8 +25,7 @@ else
    echo "${red}Access Denied!!${norm}"
    exit 1
 fi
-wget -q -O /etc/seveip https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/ip.txt 
-clear
+wget -q -O /etc/seveip https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/ip.txt
 if ! grep -w -q $het /etc/seveip
 then 
    echo "${red}Sorry, only registered IPs can use this script! Contact Me On Facebook: りんか ちりくめい${norm}" 
