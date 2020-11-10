@@ -66,6 +66,7 @@ cat <<EOF >>/etc/systemd/system/ohpserver.service
 [Unit]
 
 Description= SeveScripts
+
 Wants=network.target
 After=network.target
 [Service]
@@ -165,7 +166,8 @@ sleep 1
 sed -i '/^/d' /etc/systemd/system/ohpserver.service
 # Catting The Dir
 cat <<EOF >>/etc/systemd/system/ohpserver.service
-[Unit]Description=SeveScripts
+[Unit]
+Description=SeveScripts
 Wants=network.target
 After=network.target
 [Service]
