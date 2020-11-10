@@ -29,9 +29,13 @@ wget -q -O seveip https://raw.githubusercontent.com/mathew1357/seve-scripts.2/ma
 if ! grep -w -q $het seveip; 
 then 
    echo "${red}Sorry, only registered IPs can use this script! Contact Me On Facebook: りんか ちりくめい${norm}" 
+   rm -f /root/seveip
+   exit 1
 else 
    echo
+   echo "${green} WELCOME USER ${norm}"
 		rm -f /root/seveip
+fi
 # FLAG
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Install Or Press ${red}CTRL + C${norm} to stop"
 # Install
