@@ -141,7 +141,7 @@ echo
 ok=0
 while [ $ok = 0 ]
 do
-  read -p "Enter Your Desired Port" pot
+  read -p "Enter Your Desired Port: " pot
   if [ ${#pot} -gt 5 ]
   then
     echo Too long - 5 characters max
