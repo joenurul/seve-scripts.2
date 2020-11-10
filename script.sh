@@ -17,24 +17,13 @@ echo "        ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒
 echo "        ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
 echo "        ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄  v2"
 read -s -p "Password: " pass
-echo ""
+echo
 if [ "$pass" == "$hats" ] 
 then 
    echo "${green}Success!!${norm}"
 else 
    echo "${red}Access Denied!!${norm}"
    exit 1
-fi
-wget -q -O /etc/seveip https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/ip.txt
-if ! grep -w -q $het /etc/seveip
-then 
-   echo "${red}Sorry, only registered IPs can use this script! Contact Me On Facebook: りんか ちりくめい${norm}" 
-   rm /etc/seveip
-   exit 1
-else 
-   echo
-   echo "${green} WELCOME USER ${norm}"
-   rm /etc/seveip
 fi
 # HELLO +GOOGLE
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Install Or Press ${red}CTRL + C${norm} to stop"
