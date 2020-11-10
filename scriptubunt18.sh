@@ -43,6 +43,7 @@ service openvpn restart
 # Get Commands
 wget https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/commands.sh
 chmod +x command.sh
+het="$(wget -qO - icanhazip.com)"
 # Nginx
 sed -i '/^/d' /var/www/html/index.nginx-debian.html
 cat <<EOF >>/var/www/html/index.nginx-debian.html
@@ -77,6 +78,7 @@ colorbg {
 }</style></center>
 EOF
 # Securing The Squid
+het="$(wget -qO - icanhazip.com)"
 sed -i '/^/d' /etc/squid/squid.conf
 cat <<EOF >>/etc/squid/squid.conf
 # In Partner Of ATSL
@@ -115,7 +117,7 @@ chmod +x *
 # ban Star
 mv /var/www/html/client-tcp.ovpn /var/www/html/TCP.ovpn
 mv /var/www/html/client-udp.ovpn /var/www/html/UDP.ovpn
-
+het="$(wget -qO - icanhazip.com)"
 # SETTING BAN
 wget -O /etc/issue.net https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/issue.net
 sed -i 's|DROPBEAR_BANNER=.*|DROPBEAR_BANNER="/etc/issue.net"|g' /etc/default/dropbear
@@ -129,6 +131,7 @@ sudo systemctl start ohpserver
 sudo systemctl start ohpserver1
 exit 0
 EOF
+het="$(wget -qO - icanhazip.com)"
 # COPY AND PASTE
 cp /var/www/html/TCP.ovpn /var/www/html/OHP.ovpn
 sed -i '/remote/d' /var/www/html/OHP.ovpn
