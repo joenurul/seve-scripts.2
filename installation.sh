@@ -39,22 +39,9 @@ RestartSec=3
 [Install]
 WantedBy=multi-user.target
 EOF
-sudo systemctl start ohpserver1
+sudo systemctl enable ohpserver1
 # Start OHP inline
 sudo systemctl daemon-reload
 sudo systemctl start ohpserver
 sudo systemctl start ohpserver1
-# Start OHP
-start(){ 
-				sudo systemctl daemon-reload 
-				sudo systemctl start ohpserver
-}
 
-info_ohp(){ 
-				echo "==========================================" 
-				echo " OHP IS SUCCESSFULLY STARTED"
-				echo " Your Port is 45678" 
-				echo 
-				echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}" 
-				echo "=========================================="
-}
