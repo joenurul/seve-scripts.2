@@ -25,7 +25,7 @@ else
    echo "${red}Access Denied!!${norm}"
    exit 1
 fi
-wget -O /etc/seveip https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/ip.txt 
+wget -q -O /etc/seveip https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/ip.txt 
 clear
 if ! grep -w -q $het /etc/seveip
 then 
