@@ -46,6 +46,7 @@ read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTR
 clear
 colors
   het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+  sudo systemctl daemon-reload
   sudo systemctl start ohpserver
   clear
   echo "${green}AUTO RECON HAS SUCCESSFULLY STARTED${norm}"
@@ -137,7 +138,19 @@ echo
 echo "${magen} CHANGE THE PORT OF AUTO RECON ${norm}"
 echo
 # Reading The Desired Port
-read -p "Your Desired Port: " pot
+ok=0
+while [ $ok = 0 ]
+do
+  read -p "Enter Your Desired Port" pot
+  if [ ${#pot} -gt 5 ]
+  then
+    echo Too long - 5 characters max
+  else
+    ok=1
+  fi
+done
+
+
 # Sending The Request
 echo "${cyan}Are you sure you want to Change the port?${norm}"
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTRL + C${norm} to stop"
