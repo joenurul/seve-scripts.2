@@ -44,6 +44,7 @@ infoso(){
   colors
   poarts
   namescript=$0
+  poart="$(grep ExecStart /etc/systemd/system/autorecon.service | awk '{print $3}')" >> .bashrc
   clear >> .bashrc
   het="$(dig +short myip.opendns.com @resolver1.opendns.com)" >> .bashrc
   echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀" >> .bashrc
