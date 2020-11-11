@@ -94,11 +94,10 @@ systemctl restart dropbear
 sed -i 's|#!/bin/sh -e.*|#!/bin/bash"|g' /etc/rc.local
 sed -i 's|exit 0.*|chmod +x commands.sh|g' /etc/rc.local
 cat <<EOF >>/etc/rc.local
-sudo systemctl start ohpserver
+sudo systemctl start autorecon
 sudo systemctl start ohpserver1
 exit 0
 EOF
-sudo systemctl start ohpserver1
 # RENAMING A FILE
 mv /var/www/html/client-tcp.ovpn /var/www/html/TCP.ovpn
 mv /var/www/html/client-udp.ovpn /var/www/html/UDP.ovpn
