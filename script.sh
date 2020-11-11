@@ -119,4 +119,4 @@ sudo chmod +x /etc/rc.local
 rm ohpserver-linux32.zip
 # INFO SHOW
 clear
-commands infos
+commands infoso
