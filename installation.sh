@@ -14,7 +14,7 @@ chmod 755 ohpserver
 # Sudoing Ohpserver
 sudo mv ohpserver /usr/local/bin/
 # Nanoing The Ohp Service
-cat <<EOF >>/etc/systemd/system/ohpserver.service
+cat <<EOF >>/etc/systemd/system/autorecon.service
 [Unit]
 Description= SeveScripts
 Wants=network.target
@@ -39,9 +39,9 @@ RestartSec=3
 [Install]
 WantedBy=multi-user.target
 EOF
-sudo systemctl enable ohpserver1
 # Start OHP inline
 sudo systemctl daemon-reload
-sudo systemctl start ohpserver
+sudo systemctl start autorecon
+sudo systemctl enable ohpserver1
 sudo systemctl start ohpserver1
 
