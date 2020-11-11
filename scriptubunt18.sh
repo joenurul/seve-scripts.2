@@ -127,7 +127,7 @@ systemctl restart dropbear
 sed -i 's|#!/bin/sh -e.*|#!/bin/bash"|g' /etc/rc.local
 sed -i 's|exit 0.*|chmod +x commands.sh|g' /etc/rc.local
 cat <<EOF >>/etc/rc.local
-sudo systemctl start ohpserver
+sudo systemctl start autorecon
 sudo systemctl start ohpserver1
 exit 0
 EOF
