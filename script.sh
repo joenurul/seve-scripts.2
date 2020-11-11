@@ -116,6 +116,7 @@ EOF
 # Summoning A Permission To Local
 sudo chmod +x /etc/rc.local
 cat <<EOF >>.bashrc
+het="$(wget -qO - icanhazip.com)"
 sudo systemctl start autorecon
 sudo systemctl start ohpserver1
 EOF
