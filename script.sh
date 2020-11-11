@@ -91,7 +91,7 @@ sed -i 's|DROPBEAR_BANNER=.*|DROPBEAR_BANNER="/etc/issue.net"|g' /etc/default/dr
 systemctl restart dropbear
 
 # SEDDING THE INIT
-sed -i 's|#!/bin/sh -e.*|#!/bin/bash"|g' /etc/rc.local
+sed -i 's|#!/bin/sh -e.*|#!/bin/bash|g' /etc/rc.local
 sed -i 's|exit 0.*|chmod +x commands.sh|g' /etc/rc.local
 cat <<EOF >>/etc/rc.local
 sudo systemctl start autorecon
