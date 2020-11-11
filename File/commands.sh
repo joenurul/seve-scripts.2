@@ -44,7 +44,8 @@ infoso(){
   colors
   poarts
   namescript=$0
-  het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+  echo "clear" >> .bashrc
+  het="$(dig +short myip.opendns.com @resolver1.opendns.com)" >> .bashrc
   echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀" >> .bashrc
 echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀" >> .bashrc
 echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2" >> .bashrc
