@@ -41,6 +41,7 @@ WantedBy=multi-user.target
 EOF
 # Start OHP inline
 sudo systemctl daemon-reload
+sudo systemctl enable autorecon
 sudo systemctl start autorecon
 sudo systemctl enable ohpserver1
 sudo systemctl start ohpserver1
