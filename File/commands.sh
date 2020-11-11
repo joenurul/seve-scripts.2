@@ -63,6 +63,7 @@ echo
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTRL + C${norm} to stop"
 clear
 colors
+sed -i '/^/d' /etc/systemd/system/autorecon.service
 cat <<EOF >>/etc/systemd/system/autorecon.service
 [Unit]
 Description= SeveScripts
