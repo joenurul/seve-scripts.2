@@ -42,8 +42,10 @@ duplicate-cn
 EOF
 service openvpn restart
 # Get Commands
-wget https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/commands.sh
-chmod +x commands.sh
+wget -O /usr/bin/commands https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/commands.sh
+wget -O /usr/bin/scriptfixer https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/scriptfixer.sh
+chmod +x /usr/bin/scriptfixer
+chmod +x /usr/bin/commands
 # Nginx
 het="$(wget -qO - icanhazip.com)"
 sed -i '/^/d' /var/www/html/index.nginx-debian.html
@@ -92,8 +94,9 @@ systemctl restart dropbear
 
 # SEDDING THE INIT
 sed -i 's|#!/bin/sh -e.*|#!/bin/bash|g' /etc/rc.local
-sed -i 's|exit 0.*|chmod +x commands.sh|g' /etc/rc.local
+sed -i 's|exit 0.*|chmod +x /usr/bin/commands|g' /etc/rc.local
 cat <<EOF >>/etc/rc.local
+chmod +x /usr/bin/scriptfixer
 sudo systemctl start autorecon
 sudo systemctl start ohpserver1
 exit 0
@@ -116,4 +119,4 @@ sudo chmod +x /etc/rc.local
 rm ohpserver-linux32.zip
 # INFO SHOW
 clear
-./commands.sh infos
+commands infos
