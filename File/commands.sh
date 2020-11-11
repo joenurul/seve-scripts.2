@@ -10,12 +10,15 @@ bold="`tput bold`"
 norm="`tput sgr0`"
 magen="`tput setaf 5`"
 }
+poarts(){
 poart="$(grep ExecStart /etc/systemd/system/autorecon.service | awk '{print $3}')"
+}
 namescript=$0
 # Info Section
 infos(){ 
   clear
   colors
+  poarts
   namescript=$0
   het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
   echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
@@ -31,13 +34,14 @@ echo "=========================================="
   echo " All Configs: $het:81"
   echo " Webmin: $het:10000" 
   echo " Create Username: usernew"
-  echo " Options: bash $0 [infos|start_ar|ar_fixer|squid_fixer|changeport_ar|showconnected|showtotalconnected]"
+  echo " Options: $0 [infos|start_ar|ar_fixer|squid_fixer|changeport_ar|showconnected|showtotalconnected]"
   echo 
   echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}" 
   echo "=========================================="
 }
 # Start Auto Recon
 start_ar(){ 
+poarts
 clear
 echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
@@ -51,84 +55,12 @@ colors
   sudo systemctl start autorecon
   clear
   echo "${green}AUTO RECON HAS SUCCESSFULLY STARTED${norm}"
-  grep ExecStart /etc/systemd/system/autorecon.service | awk '{print $3}'
-}
-# Auto Reconnect Fixer
-ar_fixer(){
-clear
-echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
-echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
-echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
-echo
-read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTRL + C${norm} to stop"
-clear
-colors
-sed -i '/^/d' /etc/systemd/system/autorecon.service
-cat <<EOF >>/etc/systemd/system/autorecon.service
-[Unit]
-Description= SeveScripts
-Wants=network.target
-After=network.target
-[Service]
-Type=simple
-ExecStart=/usr/local/bin/ohpserver -port 45678 -proxy 127.0.0.1:8000 -tunnel 127.0.0.1:143
-Restart=always
-WatchdogSec=55
-[Install]
-WantedBy=multi-user.target
-EOF
-# Start OHP inline
-sudo systemctl daemon-reload
-sudo systemctl start autorecon 
-clear
-echo "${green}The AutoReconnect Has FIXED!!${norm}"
-echo "Fixed By ATSL/SEVESCRIPTS"
-}
-# Squid Proxy Fixer
-squid_fixer(){ 
-clear
-echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
-echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
-echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
-echo
-read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTRL + C${norm} to stop"
-clear
-colors
-sed -i '/^/d' /etc/squid/squid.conf
-cat <<EOF >>/etc/squid/squid.conf
-# In Partner Of ATSL
-# CREATED BY SEVE
-acl localhost src 127.0.0.1/32 ::1
-acl to_localhost dst 127.0.0.0/8 0.0.0.0/32 ::1
-acl SSL_ports port 443
-acl Safe_ports port 80
-acl Safe_ports port 21
-acl Safe_ports port 443
-acl Safe_ports port 70
-acl Safe_ports port 210
-acl Safe_ports port 1025-65535
-acl Safe_ports port 280
-acl Safe_ports port 488
-acl Safe_ports port 591
-acl Safe_ports port 777
-acl CONNECT method CONNECT
-http_access allow manager localhost
-http_access deny manager
-acl all src 0.0.0.0/0
-http_access allow localhost
-http_access allow all
-http_port 8000
-http_port 8080
-visible_hostname SEVE-SCRIPTS
-EOF
-sudo systemctl restart squid
-clear
-echo "${green}The SquidPackage Has FIXED!!${norm}"
-echo "Fixed By ATSL/SEVESCRIPTS"
+  echo "Port: $poart"
 }
 # Port Changer AutoRecon
 changeport_ar(){ 
 colors
+poarts
 clear
 echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
@@ -186,9 +118,10 @@ echo
 echo "${green} CHANGING SUCCESS ${norm}"
 echo "${cyan} Created By ATSL/SEVE SCRIPT${norm}"
 echo 
+echo " Your Port: $poart"
 }
 showconnected(){ 
-poart="$(grep ExecStart /etc/systemd/system/autorecon.service | awk '{print $3}')"
+poarts
 echo "${green} ●CONNECTED USERS IP TO AUTO RECON● ${norm}"
 netstat -tn 2>/dev/null | grep :$poart | grep 110 | awk '{print $5}' | cut -d: -f1| awk '!x[$0]++'
 }
@@ -201,11 +134,11 @@ colors
 action=$1
 [ -z $1 ] && action=infos
 case "$action" in 
-infos|start_ar|ar_fixer|squid_fixer|changeport_ar|showconnected|showtotalconnected) 
+infos|start_ar|changeport_ar|showconnected|showtotalconnected) 
 ${action}
 ;; 
 *) 
 echo "${red}Arguments error! [ ${action} ]${norm}" 
-echo "Usage: $0 [infos|start_ar|ar_fixer|squid_fixer|changeport_ar|showconnected|showtotalconnected]" 
+echo "Usage: $0 [infos|start_ar|changeport_ar|showconnected|showtotalconnected]" 
 ;;
 esac
