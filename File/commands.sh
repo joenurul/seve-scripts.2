@@ -34,7 +34,7 @@ echo "=========================================="
   echo " All Configs: $het:81"
   echo " Webmin: $het:10000" 
   echo " Create Username: usernew"
-  echo " Options: $0 [infos|start_ar|ar_fixer|squid_fixer|changeport_ar|showconnected|showtotalconnected]"
+  echo " Options: commands [infos|start_ar|ar_fixer|squid_fixer|changeport_ar|showconnected|showtotalconnected]"
   echo 
   echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}" 
   echo "=========================================="
