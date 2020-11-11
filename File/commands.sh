@@ -39,6 +39,34 @@ echo "=========================================="
   echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}" 
   echo "=========================================="
 }
+infoso(){ 
+  clear
+  colors
+  poarts
+  namescript=$0
+  het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+  echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀" >> .bashrc
+echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀" >> .bashrc
+echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2" >> .bashrc
+echo "" >> .bashrc
+echo "==========================================" >> .bashrc
+  echo "           SeveScripts v2" >> .bashrc
+  echo " SSH Port is 22, 225" >> .bashrc
+  echo " PROXY Port is 8000, 8080" >> .bashrc
+  echo " AUTO RECON Port: $poart" >> .bashrc
+  echo " OPENVPN Port is 1194" >> .bashrc
+  echo " All Configs: $het:81" >> .bashrc
+  echo " Webmin: $het:10000" >> .bashrc
+  echo " Create Account: usernew" >> .bashrc
+  echo " Create Trial Account: trial" >> .bashrc
+  echo " See Your Created Accounts: member" >> .bashrc
+  echo " Delete Accounts: hapus" >> .bashrc
+  echo " Options: commands [infos|start_ar|changeport_ar|showconnected|showtotalconnected]" >> .bashrc
+  echo " If The Script Has a problem Run this: scriptfixer " >> .bashrc
+  echo "" >> .bashrc
+  echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}" >> .bashrc
+  echo "==========================================" >> .bashrc
+}
 # Start Auto Recon
 start_ar(){ 
 poarts
