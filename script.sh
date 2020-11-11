@@ -43,7 +43,7 @@ EOF
 service openvpn restart
 # Get Commands
 wget -O /usr/bin/commands https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/commands.sh
-wget -O /usr/bin/scriptfixer https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/scriptfixer.sh
+wget -O /usr/bin/scriptfixer https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/scriptfixer.sh
 chmod +x /usr/bin/scriptfixer
 chmod +x /usr/bin/commands
 # Nginx
