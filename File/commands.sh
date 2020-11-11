@@ -31,7 +31,7 @@ echo "=========================================="
   echo " All Configs: $het:81"
   echo " Webmin: $het:10000" 
   echo " Create Username: usernew"
-  echo " Options: $0 [infos|start_ar|ar_fixer|squid_fixer|changeport_ar|showconnected|showtotalconnected]"
+  echo " Options: bash $0 [infos|start_ar|ar_fixer|squid_fixer|changeport_ar|showconnected|showtotalconnected]"
   echo 
   echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}" 
   echo "=========================================="
@@ -187,12 +187,13 @@ echo "${cyan} Created By ATSL/SEVE SCRIPT${norm}"
 echo 
 }
 showconnected(){ 
+poart="$(grep ExecStart /etc/systemd/system/autorecon.service | awk '{print $3}')"
 echo "${green} ●CONNECTED USERS IP TO AUTO RECON● ${norm}"
-netstat -tn 2>/dev/null | grep :45678 | grep 110 | awk '{print $5}' | cut -d: -f1| awk '!x[$0]++'
+netstat -tn 2>/dev/null | grep :$poart | grep 110 | awk '{print $5}' | cut -d: -f1| awk '!x[$0]++'
 }
 showtotalconnected(){ 
 echo "${green} ●TOTAL CONNECTED USERS TO AUTO RECON● ${norm}"
-echo "${green}$(netstat -tn 2>/dev/null | grep :45678 | uniq -u | grep 110 | awk '{print $5}' | cut -d: -f1 | awk '!x[$0]++' | wc -l )${norm}"
+echo "${green}$(netstat -tn 2>/dev/null | grep :$poart | uniq -u | grep 110 | awk '{print $5}' | cut -d: -f1 | awk '!x[$0]++' | wc -l )${norm}"
 }
 # INFO SHOW
 colors
