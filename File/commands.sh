@@ -10,6 +10,7 @@ bold="`tput bold`"
 norm="`tput sgr0`"
 magen="`tput setaf 5`"
 }
+poart="$(grep ExecStart /etc/systemd/system/autorecon.service | awk '{print $3}')"
 namescript=$0
 # Info Section
 infos(){ 
@@ -25,12 +26,12 @@ echo "=========================================="
   echo " SCRIPT IS SUCCESSFULLY INSTALLED"
   echo " SSH Port is 22, 225" 
   echo " PROXY Port is 8000, 8080" 
-  echo " AUTO RECON Port: 45678"
+  echo " AUTO RECON Port: $poart"
   echo " OPENVPN Port is 1194" 
   echo " All Configs: $het:81"
   echo " Webmin: $het:10000" 
   echo " Create Username: usernew"
-  echo " Start AutoRecon: chmod +x command.sh && ./commands.sh start_ar"
+  echo " Options: $0 [infos|start_ar|ar_fixer|squid_fixer|changeport_ar|showconnected|showtotalconnected]"
   echo 
   echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}" 
   echo "=========================================="
@@ -47,10 +48,10 @@ clear
 colors
   het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
   sudo systemctl daemon-reload
-  sudo systemctl start ohpserver
+  sudo systemctl start autorecon
   clear
   echo "${green}AUTO RECON HAS SUCCESSFULLY STARTED${norm}"
-  echo "YOUR PORT: 45678"
+  grep ExecStart /etc/systemd/system/autorecon.service | awk '{print $3}'
 }
 # Auto Reconnect Fixer
 ar_fixer(){
@@ -62,11 +63,9 @@ echo
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTRL + C${norm} to stop"
 clear
 colors
-cat <<EOF >>/etc/systemd/system/ohpserver.service
+cat <<EOF >>/etc/systemd/system/autorecon.service
 [Unit]
-
 Description= SeveScripts
-
 Wants=network.target
 After=network.target
 [Service]
@@ -79,7 +78,7 @@ WantedBy=multi-user.target
 EOF
 # Start OHP inline
 sudo systemctl daemon-reload
-sudo systemctl start ohpserver 
+sudo systemctl start autorecon 
 clear
 echo "${green}The AutoReconnect Has FIXED!!${norm}"
 echo "Fixed By ATSL/SEVESCRIPTS"
@@ -163,9 +162,9 @@ clear
 echo "${green}Please Wait...${norm}"
 sleep 1
 # Sedding The Dir
-sed -i '/^/d' /etc/systemd/system/ohpserver.service
+sed -i '/^/d' /etc/systemd/system/autorecon.service
 # Catting The Dir
-cat <<EOF >>/etc/systemd/system/ohpserver.service
+cat <<EOF >>/etc/systemd/system/autorecon.service
 [Unit]
 Description=SeveScripts
 Wants=network.target
@@ -180,7 +179,7 @@ WantedBy=multi-user.target
 EOF
 # Start OHP inline
 sudo systemctl daemon-reload
-sudo systemctl start ohpserver 
+sudo systemctl start autorecon 
 clear
 echo 
 echo "${green} CHANGING SUCCESS ${norm}"
