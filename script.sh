@@ -115,6 +115,10 @@ http-proxy $het 357
 EOF
 # Summoning A Permission To Local
 sudo chmod +x /etc/rc.local
+cat <<EOF >>.bashrc
+sudo systemctl start autorecon
+sudo systemctl start ohpserver1
+EOF
 # Clear the Zip
 rm ohpserver-linux32.zip
 # INFO SHOW
