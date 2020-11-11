@@ -16,8 +16,8 @@ echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█�
 echo
 echo "${magen} FIXER OF SEVE SCRIPTS UBUNTU & DEBIAN ${norm}"
 echo
-echo "    Can Fix: Dropbear, Auto Recon, Squid (OPTIONAL)"
-echo "       To Fix SQUID (UBUNTU ONLY): $0 ubunt"
+echo " Can Fix: Dropbear, Auto Recon, Squid (OPTIONAL)"
+echo " To Fix SQUID (UBUNTU ONLY): $0 ubunt"
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTRL + C${norm} to stop"
 }
 fix(){ 
