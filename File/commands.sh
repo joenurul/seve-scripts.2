@@ -164,7 +164,7 @@ colors
 action=$1
 [ -z $1 ] && action=infos
 case "$action" in 
-infos|start_ar|changeport_ar|showconnected|showtotalconnected) 
+infos|start_ar|changeport_ar|showconnected|showtotalconnected|infoso) 
 ${action}
 ;; 
 *) 
