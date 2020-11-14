@@ -45,30 +45,30 @@ infoso(){
   poarts
   namescript=$0
 cat <<EOF >>.bashrc
-  poart="$(grep ExecStart /etc/systemd/system/autorecon.service | awk '{print $3}')" >> .bashrc
-  clear
-  het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+poart="$(grep ExecStart /etc/systemd/system/autorecon.service | awk '{print $3}')"
+clear
+het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
 echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
 echo ""
 echo "=========================================="
-  echo "           SeveScripts v2"
-  echo " SSH Port is 22, 225"
-  echo " PROXY Port is 8000, 8080"
-  echo " AUTO RECON Port: $poart"
-  echo " OPENVPN Port is 1194"
-  echo " All Configs: $het:81"
-  echo " Webmin: $het:10000"
-  echo " Create Account: usernew"
-  echo " Create Trial Account: trial"
-  echo " See Your Created Accounts: member"
-  echo " Delete Accounts: hapus"
-  echo " Options: commands [infos|start_ar|changeport_ar|showconnected|showtotalconnected]"
-  echo " If The Script Has a problem Run this: scriptfixer "
-  echo ""
-  echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}"
-  echo "=========================================="
+echo "              SeveScripts v2"
+echo " SSH Port is 22, 225"
+echo " PROXY Port is 8000, 8080"
+echo " AUTO RECON Port: $poart"
+echo " OPENVPN Port is 1194"
+echo " All Configs: $het:81"
+echo " Webmin: $het:10000"
+echo " Create Account: usernew"
+echo " Create Trial Account: trial"
+echo " See Your Created Accounts: member"
+echo " Delete Accounts: hapus"
+echo " Options: commands [infos|start_ar|changeport_ar|showconnected|showtotalconnected]"
+echo " If The Script Has a problem Run this: scriptfixer "
+echo ""
+echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}"
+echo "=========================================="
 EOF
 }
 # Start Auto Recon
