@@ -44,30 +44,32 @@ infoso(){
   colors
   poarts
   namescript=$0
+cat <<EOF >>.bashrc
   poart="$(grep ExecStart /etc/systemd/system/autorecon.service | awk '{print $3}')" >> .bashrc
-  clear >> .bashrc
-  het="$(dig +short myip.opendns.com @resolver1.opendns.com)" >> .bashrc
-  echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀" >> .bashrc
-echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀" >> .bashrc
-echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2" >> .bashrc
-echo "" >> .bashrc
-echo "==========================================" >> .bashrc
-  echo "           SeveScripts v2" >> .bashrc
-  echo " SSH Port is 22, 225" >> .bashrc
-  echo " PROXY Port is 8000, 8080" >> .bashrc
-  echo " AUTO RECON Port: $poart" >> .bashrc
-  echo " OPENVPN Port is 1194" >> .bashrc
-  echo " All Configs: $het:81" >> .bashrc
-  echo " Webmin: $het:10000" >> .bashrc
-  echo " Create Account: usernew" >> .bashrc
-  echo " Create Trial Account: trial" >> .bashrc
-  echo " See Your Created Accounts: member" >> .bashrc
-  echo " Delete Accounts: hapus" >> .bashrc
-  echo " Options: commands [infos|start_ar|changeport_ar|showconnected|showtotalconnected]" >> .bashrc
-  echo " If The Script Has a problem Run this: scriptfixer " >> .bashrc
-  echo "" >> .bashrc
-  echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}" >> .bashrc
-  echo "==========================================" >> .bashrc
+  clear
+  het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
+echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
+echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
+echo ""
+echo "=========================================="
+  echo "           SeveScripts v2"
+  echo " SSH Port is 22, 225"
+  echo " PROXY Port is 8000, 8080"
+  echo " AUTO RECON Port: $poart"
+  echo " OPENVPN Port is 1194"
+  echo " All Configs: $het:81"
+  echo " Webmin: $het:10000"
+  echo " Create Account: usernew"
+  echo " Create Trial Account: trial"
+  echo " See Your Created Accounts: member"
+  echo " Delete Accounts: hapus"
+  echo " Options: commands [infos|start_ar|changeport_ar|showconnected|showtotalconnected]"
+  echo " If The Script Has a problem Run this: scriptfixer "
+  echo ""
+  echo "${green}===========AUTO SCRIPT BY SEVE===========${norm}"
+  echo "=========================================="
+EOF
 }
 # Start Auto Recon
 start_ar(){ 
