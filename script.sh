@@ -125,3 +125,4 @@ rm ohpserver-linux32.zip
 # INFO SHOW
 clear
 commands infoso
+commands info
