@@ -28,7 +28,9 @@ wget -q https://github.com/mathew1357/seve-scripts.2/raw/master/autorecons.zip
 # Unzip
 function cleanup { 
 rm autorecons.zip
+echo
 echo "EXITED"
+echo
 }
 unzip autorecons.zip
 # Run As Root
