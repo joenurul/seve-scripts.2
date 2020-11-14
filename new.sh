@@ -8,9 +8,9 @@ norm="`tput sgr0`"
 magen="`tput setaf 5`"
 # Install
 clear
-echo "    ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
-echo "    ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
-echo "    ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
+echo " ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
+echo " ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
+echo " ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
 het="$(curl -s ifconfig.me)"
 wget -q -O /etc/seveip https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/File/ip.txt
 if ! grep -w -q $het /etc/seveip;
@@ -26,6 +26,10 @@ fi
 read -n 1 -s -r -p "[+] Press ${green}Enter Key${norm} to Install Or Press ${red}CTRL + C${norm} to stop"
 wget -q https://github.com/mathew1357/seve-scripts.2/raw/master/autorecons.zip
 # Unzip
+function cleanup { 
+rm autorecons.zip
+echo "EXITED"
+}
 unzip autorecons.zip
 # Run As Root
 chmod 755 autorecon
@@ -34,6 +38,7 @@ sudo mv autorecon /usr/local/bin/
 # Nanoing The AUTORECON
 clear
 echo "Make Sure the Proxy Port & Dropbear port is Aligned to your server!"
+trap cleanup EXIT
 read -p "[+] Enter Your AutoRecon Port: " check1
 read -p "[+] Enter Your Proxy Port: " check2
 read -p "[+] Enter Your Dropbear Port: " check3
