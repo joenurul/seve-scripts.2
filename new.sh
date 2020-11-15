@@ -28,6 +28,7 @@ wget -q https://github.com/mathew1357/seve-scripts.2/raw/master/autorecons.zip
 # Unzip
 function cleanup { 
 rm autorecons.zip
+rm /usr/local/bin/autorecon
 echo
 echo "EXITED"
 echo
