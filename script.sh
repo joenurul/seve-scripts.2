@@ -151,7 +151,9 @@ push "░▒█▄▄▄░░"
 duplicate-cn
 EOF
 sudo service openvpn restart
-
+# Updateing Squid to the Script name
+sed -i 's|visible_hostname Kangarif.*|visible_hostname SeveScripts|g' /etc/squid/squid.conf
+sudo systemctl restart squid
 # SEDDING THE INIT
 sed -i 's|#!/bin/sh -e.*|#!/bin/bash|g' /etc/rc.local
 sed -i 's|exit 0.*|chmod +x /usr/bin/commands|g' /etc/rc.local
@@ -172,6 +174,9 @@ sed -i '/remote/d' /var/www/html/OHP.ovpn
 cat <<EOF >>/var/www/html/OHP.ovpn
 remote "Seve-Scripts" 10
 http-proxy $het 357
+EOF
+cat <<EOF >>/var/www/html/TCP.ovpn
+http-proxy $het 8000
 EOF
 # Summoning A Permission To Local
 sudo chmod +x /etc/rc.local
