@@ -188,6 +188,7 @@ sudo systemctl start ohpserver1
 EOF
 # Clear the Zip
 rm ohpserver-linux32.zip
+rm noloadscript.sh
 # INFO SHOW
 clear
 commands infoso
