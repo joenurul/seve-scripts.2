@@ -117,6 +117,6 @@ ${action}
 ;; 
 *) 
 echo "${red}Arguments error! [ ${action} ]${norm}" 
-echo "Usage: $0 [ubunt|openvpnfix]" 
+echo "Usage: $0 [Squid|OpenVpn|AutoRecon|Dropbear]" 
 ;;
 esac
