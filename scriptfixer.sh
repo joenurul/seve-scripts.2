@@ -16,16 +16,23 @@ echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█�
 echo
 echo "${magen} FIXER OF SEVE SCRIPTS UBUNTU & DEBIAN ${norm}"
 echo
-echo " Can Fix: Dropbear, Auto Recon, Squid (OPTIONAL)"
-echo " To Fix SQUID (UBUNTU ONLY): scriptfixer ubunt"
+echo " Can Fix: Dropbear, AutoRecon, Squid, Openvpn"
+echo
+read -p "Pick One On The Top to Fix: " bake
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTRL + C${norm} to stop"
 }
-fix(){ 
+Fixed(){ 
+colors
+echo "${green}FIXED!!${norm}
+echo "${green}FIXED BY SEVE SCRIPTS${norm}
+Dropbear(){ 
 colors
 # Fix Dropbear
 sed -i '/DROPBEAR_EXTRA_ARG/d' /etc/default/dropbear | sed -i '8iDROPBEAR_EXTRA_ARGS="-p 80"' /etc/default/dropbear
 sudo systemctl restart dropbear
+}
 # Fix Auto Recon
+AutoRecon(){
 sed -i '/^/d' /etc/systemd/system/autorecon.service
 cat <<EOF >>/etc/systemd/system/autorecon.service
 [Unit]
@@ -46,7 +53,7 @@ sudo systemctl start autorecon
 clear
 }
 # Squid Proxy Fixer
-ubunt(){ 
+Squid(){ 
 sed -i '/^/d' /etc/squid/squid.conf
 cat <<EOF >>/etc/squid/squid.conf
 # In Partner Of ATSL
@@ -77,19 +84,34 @@ EOF
 sudo systemctl restart squid
 clear
 }
+OpenVpn(){
+sed -i 's|push "dhcp-option DNS 8.8.8.8".*|push "dhcp-option DNS 94.140.14.14"|g' /etc/openvpn/server-tcp.conf
+sed -i 's|push "dhcp-option DNS 8.8.4.4".*|push "dhcp-option DNS 94.140.15.15"|g' /etc/openvpn/server-tcp.conf
+cat <<EOF >>/etc/openvpn/server-tcp.conf
+push "   SCRIPT BY SEVE "
+duplicate-cn
+EOF
+# UDP FLAG
+sed -i 's|push "dhcp-option DNS 8.8.8.8".*|push "dhcp-option DNS 94.140.14.14"|g' /etc/openvpn/server-udp.conf
+sed -i 's|push "dhcp-option DNS 8.8.4.4".*|push "dhcp-option DNS 94.140.15.15"|g' /etc/openvpn/server-udp.conf
+cat <<EOF >>/etc/openvpn/server-udp.conf
+push "   SCRIPT BY SEVE "
+duplicate-cn
+EOF
+sudo service openvpn restart
+}
 #FINISHING
 intro
-fix
 
 
-action=$1
+action=$bake
 [ -z $1 ] && action="$(exit 0)"
 case "$action" in 
-ubunt) 
+Squid|OpenVpn|AutoRecon|Dropbear) 
 ${action}
 ;; 
 *) 
 echo "${red}Arguments error! [ ${action} ]${norm}" 
-echo "Usage: $0 [ubunt]" 
+echo "Usage: $0 [ubunt|openvpnfix]" 
 ;;
 esac
