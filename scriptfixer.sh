@@ -30,6 +30,7 @@ colors
 # Fix Dropbear
 sed -i '/DROPBEAR_EXTRA_ARG/d' /etc/default/dropbear | sed -i '8iDROPBEAR_EXTRA_ARGS="-p 80"' /etc/default/dropbear
 sudo systemctl restart dropbear
+Fixed
 }
 # Fix Auto Recon
 AutoRecon(){
@@ -51,6 +52,7 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl start autorecon 
 clear
+Fixed
 }
 # Squid Proxy Fixer
 Squid(){ 
@@ -83,6 +85,7 @@ visible_hostname SEVE-SCRIPTS
 EOF
 sudo systemctl restart squid
 clear
+Fixed
 }
 OpenVpn(){
 sed -i 's|push "dhcp-option DNS 8.8.8.8".*|push "dhcp-option DNS 94.140.14.14"|g' /etc/openvpn/server-tcp.conf
@@ -99,6 +102,8 @@ push "   SCRIPT BY SEVE "
 duplicate-cn
 EOF
 sudo service openvpn restart
+clear
+Fixed
 }
 #FINISHING
 intro
