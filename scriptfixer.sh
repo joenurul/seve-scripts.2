@@ -16,7 +16,7 @@ echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█�
 echo
 echo "${magen} FIXER OF SEVE SCRIPTS UBUNTU & DEBIAN ${norm}"
 echo
-echo " Can Fix: Dropbear, AutoRecon, Squid, Openvpn"
+echo " Can Fix: Dropbear, AutoRecon, Squid, OpenVpn"
 echo
 read -p "Pick One On The Top to Fix: " bake
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTRL + C${norm} to stop"
@@ -24,7 +24,8 @@ read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTR
 Fixed(){ 
 colors
 echo "${green}FIXED!!${norm}
-echo "${green}FIXED BY SEVE SCRIPTS${norm}
+echo "${green}FIXED BY SEVE SCRIPTS${norm}"
+}
 Dropbear(){ 
 colors
 # Fix Dropbear
