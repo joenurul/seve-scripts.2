@@ -23,8 +23,10 @@ infos(){
   het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
   echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
-echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
+echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2.3"
 echo
+echo "  Seve Scripts Updated on: November 19 2020"
+echo 
 echo "==========================================" 
   echo " SCRIPT IS SUCCESSFULLY INSTALLED"
   echo " SSH Port is 22, 225" 
@@ -50,8 +52,10 @@ clear
 het="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
-echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
-echo ""
+echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2.3"
+echo
+echo "  Seve Scripts Updated on: November 19 2020"
+echo 
 echo "=========================================="
 echo "              SeveScripts v2"
 echo " SSH Port is 22, 225"
@@ -77,7 +81,9 @@ poarts
 clear
 echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
-echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
+echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2.3"
+echo
+echo "  Seve Scripts Updated on: November 19 2020"
 echo
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTRL + C${norm} to stop"
 clear
@@ -96,7 +102,9 @@ poarts
 clear
 echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
-echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
+echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2.3"
+echo
+echo "  Seve Scripts Updated on: November 19 2020"
 echo
 echo "${magen} CHANGE THE PORT OF AUTO RECON ${norm}"
 echo
