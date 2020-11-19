@@ -1,12 +1,14 @@
 #!/bin/bash
-#ECHO COLORS
+bigecho() { echo; echo "## $1"; echo; }
+bigecho1() { echo; echo "## $1"; echo; sleep 1; }
+bigecho "ECHO COLORS"
 red="`tput setaf 1`"
 green="`tput setaf 2`"
 cyan="`tput setaf 6`"
 bold="`tput bold`"
 norm="`tput sgr0`"
 magen="`tput setaf 5`"
-# Clear
+bigecho "Clear"
 clear
 # Get Ip
 het="$(curl -s ifconfig.me)"
@@ -41,7 +43,7 @@ fi
 # HELLO +GOOGLE
 read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Install Or Press ${red}CTRL + C${norm} to stop"
 clear
-# Install
+bigecho "Installing"
 wget https://github.com/mathew1357/seve-scripts.2/raw/master/noloadscript.sh
 # Run As Root
 chmod +x noloadscript.sh
@@ -49,6 +51,16 @@ chmod +x noloadscript.sh
 ./noloadscript.sh
 # Clear
 clear
+bigecho1 Installing Anti Torrent 
+iptables -A FORWARD -m string --algo bm --string "BitTorrent" -j DROP
+iptables -A FORWARD -m string --algo bm --string "BitTorrent protocol" -j DROP
+iptables -A FORWARD -m string --algo bm --string "peer_id=" -j DROP
+iptables -A FORWARD -m string --algo bm --string ".torrent" -j DROP
+iptables -A FORWARD -m string --algo bm --string "announce.php?passkey=" -j DROP
+iptables -A FORWARD -m string --algo bm --string "torrent" -j DROP
+iptables -A FORWARD -m string --algo bm --string "announce" -j DROP
+iptables -A FORWARD -m string --algo bm --string "info_hash" -j DRO
+iptables-save
 # An Server
 cat <<EOF >>/etc/openvpn/server.conf
 duplicate-cn
@@ -59,7 +71,7 @@ wget -O /usr/bin/commands https://raw.githubusercontent.com/mathew1357/seve-scri
 wget -O /usr/bin/scriptfixer https://raw.githubusercontent.com/mathew1357/seve-scripts.2/master/scriptfixer.sh
 chmod +x /usr/bin/scriptfixer
 chmod +x /usr/bin/commands
-# Nginx
+bigecho "Setting up Nginx"
 het="$(curl -s ifconfig.me)"
 sed -i '/^/d' /var/www/html/index.nginx-debian.html
 cat <<EOF >>/var/www/html/index.nginx-debian.html
