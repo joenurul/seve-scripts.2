@@ -23,7 +23,7 @@ read -n 1 -s -r -p "Press ${green}Enter Key${norm} to Proceed Or Press ${red}CTR
 }
 Fixed(){ 
 colors
-echo "${green}FIXED!!${norm}
+echo "${green}FIXED!!${norm}"
 echo "${green}FIXED BY SEVE SCRIPTS${norm}"
 }
 Dropbear(){ 
