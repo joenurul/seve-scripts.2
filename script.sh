@@ -18,6 +18,9 @@ clear
 echo "        ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo "        ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
 echo "        ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄  v2.3"
+echo
+echo "  Seve Scripts Updated on: November 19 2020"
+echo 
 read -s -p "Password: " pass
 echo
 if [ "$pass" == "$hats" ] 
