@@ -108,16 +108,4 @@ Fixed
 }
 #FINISHING
 intro
-
-
-action=$bake
-[ -z $1 ] && action="$(exit 0)"
-case "$action" in 
-Squid|OpenVpn|AutoRecon|Dropbear) 
-${action}
-;; 
-*) 
-echo "${red}Arguments error! [ ${action} ]${norm}" 
-echo "Usage: $0 [Squid|OpenVpn|AutoRecon|Dropbear]" 
-;;
-esac
+${bake}
