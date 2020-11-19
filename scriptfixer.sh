@@ -12,8 +12,10 @@ clear
 colors
 echo "   ░▒█▀▀▀█░▒█▀▀▀░▒█░░▒█░▒█▀▀▀"
 echo "   ░░▀▀▀▄▄░▒█▀▀▀░░▒█▒█░░▒█▀▀▀"
-echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2"
+echo "   ░▒█▄▄▄█░▒█▄▄▄░░░▀▄▀░░▒█▄▄▄ v2.3"
 echo
+echo "  Seve Scripts Updated on: November 19 2020"
+echo 
 echo "${magen} FIXER OF SEVE SCRIPTS UBUNTU & DEBIAN ${norm}"
 echo
 echo " Can Fix: Dropbear, AutoRecon, Squid, OpenVpn"
