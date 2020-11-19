@@ -51,7 +51,7 @@ chmod +x noloadscript.sh
 ./noloadscript.sh
 # Clear
 clear
-bigecho1 Installing Anti Torrent 
+bigecho1 "Installing Anti Torrent "
 iptables -A FORWARD -m string --algo bm --string "BitTorrent" -j DROP
 iptables -A FORWARD -m string --algo bm --string "BitTorrent protocol" -j DROP
 iptables -A FORWARD -m string --algo bm --string "peer_id=" -j DROP
@@ -118,26 +118,27 @@ sed -i 's|DROPBEAR_BANNER=.*|DROPBEAR_BANNER="/etc/issue.net"|g' /etc/default/dr
 systemctl restart dropbear
 #XSetting up OPENVPN
 
+bigecho1 "FINISHING ALL IMPORTANT PACKAGE"
 # TCP FLAG
 sed -i 's|push "dhcp-option DNS 8.8.8.8".*|push "dhcp-option DNS 94.140.14.14"|g' /etc/openvpn/server-tcp.conf
 sed -i 's|push "dhcp-option DNS 8.8.4.4".*|push "dhcp-option DNS 94.140.15.15"|g' /etc/openvpn/server-tcp.conf
 cat <<EOF >>/etc/openvpn/server-tcp.conf
 push "   SEVER MESSAGE "
-push "░▒█▀▀▀█░"
-push "░░▀▀▀▄▄░"
-push "░▒█▄▄▄█░"
-push "░░░░░░░░"
-push "░▒█▀▀▀░░"
-push "░▒█▀▀▀░░"
-push "░▒█▄▄▄░░"
-push "░░░░░░░░"
-push "░▒█░░▒█░"
-push "░░▒█▒█░░"
-push "░░░▀▄▀░░"
-push "░░░░░░░░"
-push "░▒█▀▀▀░░"
-push "░▒█▀▀▀░░"
-push "░▒█▄▄▄░░"
+push "░░▒█▀▀▀█░░"
+push "░░░▀▀▀▄▄░░"
+push "░░▒█▄▄▄█░░"
+push "░░░░░░░░░░"
+push "░░▒█▀▀▀░░░"
+push "░░▒█▀▀▀░░░"
+push "░░▒█▄▄▄░░░"
+push "░░░░░░░░░░"
+push "░░▒█░░▒█░░"
+push "░░░▒█▒█░░░"
+push "░░░░▀▄▀░░░"
+push "░░░░░░░░░░"
+push "░░▒█▀▀▀░░░"
+push "░░▒█▀▀▀░░░"
+push "░░▒█▄▄▄░░░"
 duplicate-cn
 EOF
 
@@ -146,21 +147,21 @@ sed -i 's|push "dhcp-option DNS 8.8.8.8".*|push "dhcp-option DNS 94.140.14.14"|g
 sed -i 's|push "dhcp-option DNS 8.8.4.4".*|push "dhcp-option DNS 94.140.15.15"|g' /etc/openvpn/server-udp.conf
 cat <<EOF >>/etc/openvpn/server-udp.conf
 push "   SEVER MESSAGE "
-push "░▒█▀▀▀█░"
-push "░░▀▀▀▄▄░"
-push "░▒█▄▄▄█░"
-push "░░░░░░░░"
-push "░▒█▀▀▀░░"
-push "░▒█▀▀▀░░"
-push "░▒█▄▄▄░░"
-push "░░░░░░░░"
-push "░▒█░░▒█░"
-push "░░▒█▒█░░"
-push "░░░▀▄▀░░"
-push "░░░░░░░░"
-push "░▒█▀▀▀░░"
-push "░▒█▀▀▀░░"
-push "░▒█▄▄▄░░"
+push "░░▒█▀▀▀█░░"
+push "░░░▀▀▀▄▄░░"
+push "░░▒█▄▄▄█░░"
+push "░░░░░░░░░░"
+push "░░▒█▀▀▀░░░"
+push "░░▒█▀▀▀░░░"
+push "░░▒█▄▄▄░░░"
+push "░░░░░░░░░░"
+push "░░▒█░░▒█░░"
+push "░░░▒█▒█░░░"
+push "░░░░▀▄▀░░░"
+push "░░░░░░░░░░"
+push "░░▒█▀▀▀░░░"
+push "░░▒█▀▀▀░░░"
+push "░░▒█▄▄▄░░░"
 duplicate-cn
 EOF
 sudo service openvpn restart
